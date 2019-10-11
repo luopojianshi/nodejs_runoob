@@ -7,7 +7,7 @@ let app = express()
 
 app.use('/public', express.static('public'))
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(multer({ dest: '/tmp/' }).array('image'))
+app.use(multer({ dest: './tmp/' }).array('image'))
 
 app.get('/upload.html', (req, res) => {
 	res.sendFile( __dirname + '/' + 'upload.html' )
