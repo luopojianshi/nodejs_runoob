@@ -1,0 +1,30 @@
+{
+  "name": "nodejs_runoob",
+  "version": "1.0.0",
+  "description": "Node.js 教程",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luopojianshi/nodejs_runoob.git"
+  },
+  "keywords": [
+    "node",
+    "node.js",
+    "runoob"
+  ],
+  "author": "luopojianshi@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luopojianshi/nodejs_runoob/issues"
+  },
+  "homepage": "https://github.com/luopojianshi/nodejs_runoob#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "multer": "^1.4.2"
+  }
+}

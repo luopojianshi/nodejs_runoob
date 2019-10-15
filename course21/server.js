@@ -19,24 +19,9 @@ app.get('/listUsers', (req, res) => {
 	})
 })
 
-app.get('/:id', (req, res) => {
-	// 读取已存在的用户
-	fs.readFile( __dirname + '/' + 'users.json', 'utf8', (err, data) => {
-		data = JSON.parse( data )
-		let userId = 'user' + req.params.id
-		res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' })
-		if (userId in data) {
-			let user = data[userId]
-			console.log( user )
-			res.end( JSON.stringify(user) )
-		} else {
-			res.end('该用户不存在')
-		}	
-	})
-})
-
 app.get('/addUser', (req, res) => {
 	// 读取已存在的数据
+	console.log('/addUser')
 	fs.readFile( __dirname + '/' + 'users.json', 'utf8', (err, data) => {
 		data = JSON.parse( data )
 		data['user4'] = user['user4']
@@ -56,6 +41,22 @@ app.get('/deleteUser/:id', (req, res) => {
 
 			console.log( data )
 			res.end( JSON.stringify(data) )
+		} else {
+			res.end('该用户不存在')
+		}
+	})
+})
+
+app.get('/user/:id', (req, res) => {
+	// 读取已存在的用户
+	fs.readFile( __dirname + '/' + 'users.json', 'utf8', (err, data) => {
+		data = JSON.parse( data )
+		let userId = 'user' + req.params.id
+		res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' })
+		if (userId in data) {
+			let user = data[userId]
+			console.log( user )
+			res.end( JSON.stringify(user) )
 		} else {
 			res.end('该用户不存在')
 		}
